@@ -9,25 +9,30 @@ A remote server-client software designed to execute various "troll" commands on 
 ## **Features**
 
 ```py
-SERVER = "IP_LOCAL"
+SERVER = "YOUR_SERVER_IP" # For example your LOCAL IP
 PORT = 4444  
 ```
 
 ### **Server-side**
 - **Listening on specific IP and port**
 - **Multiple prank commands**:
-  - **msgbox**: Show a fake alert message with a random message (e.g., "Fatal Error!", "System error: format C:", etc.).
-  - **open_cd**: Open and close the CD/DVD tray.
-  - **beep**: Play random beep sounds through the target machine.
-  - **screenshot**: Capture and send a screenshot from the target machine.
-  - **mouse**: Move the mouse cursor randomly on the screen.
-  - **screen**: Turn off the screen and turn it back on.
-  - **flash**: Flash the screen by changing wallpaper rapidly.
-  - **webcam**: Open the webcam and display a message on the screen for a short time.
-  - **robot**: Make the system speak with a robot-like voice.
-  - **notepad**: Open Notepad and type a menacing message.
-  - **led**: Flash the keyboard LEDs on and off.
-  - **sos**: Display SOS Morse code with the keyboard LEDs.
+  - **msgbox**: Show a fake alert message
+  - **beep**: Play random beep sounds
+  - **mouse**: Move mouse randomly
+  - **screenlock**: Lock screen
+  - **led**: Flash the keyboard LEDs on and off
+  - **errorsound**: Trigger Windows error noise
+  - **shakymouse**: Shake the mouse
+  - **background**: Flash the screen by changing wallpaper rapidly.
+  - **flash**: Turn off the screen and turn it back on
+  - **opencd**: Open and close the CD/DVD tray
+  - **notification**: Put a notification
+  - **webcam**: Turn on the webcam light
+  - **robot**: Make the computer speak
+  - **notepad**: Launch the NOTEPAD application and post a message
+  - **theme**: Change color
+  - **shake**: Shake the open windows
+  - **flip**: Screen that flips every second
 
 ### **Client-side**
 - **Connect to the server** and execute received commands.
@@ -54,7 +59,8 @@ While the software can be used for harmless fun, it can be misused to prank indi
 
 ```bash
 root:~/# ls
-client.py  server.py
+client.py 
+server.py
 root:~/# pip3 install pyinstaller
 root:~/# pyinstaller client.py --noconsole --onefile
 root:~/# cd dist/
