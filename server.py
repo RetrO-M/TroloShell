@@ -1,7 +1,6 @@
 import socket
 import struct
 from colorama import Fore, init
-import time
 import os
 
 init()
@@ -17,75 +16,67 @@ s.listen(1)
 def title():
     os.system('clear || cls')
     print(
-        f'''{Fore.LIGHTWHITE_EX}
-▄▄▄█████▓ ██▀███   ▒█████   ██▓     ▒█████    ██████  ██░ ██ ▓█████  ██▓     ██▓    
-▓  ██▒ ▓▒▓██ ▒ ██▒▒██▒  ██▒▓██▒    ▒██▒  ██▒▒██    ▒ ▓██░ ██▒▓█   ▀ ▓██▒    ▓██▒    
-▒ ▓██░ ▒░▓██ ░▄█ ▒▒██░  ██▒▒██░    ▒██░  ██▒░ ▓██▄   ▒██▀▀██░▒███   ▒██░    ▒██░    
-░ ▓██▓ ░ ▒██▀▀█▄  ▒██   ██░▒██░    ▒██   ██░  ▒   ██▒░▓█ ░██ ▒▓█  ▄ ▒██░    ▒██░    
-  ▒██▒ ░ ░██▓ ▒██▒░ ████▓▒░░██████▒░ ████▓▒░▒██████▒▒░▓█▒░██▓░▒████▒░██████▒░██████▒
-  ▒ ░░   ░ ▒▓ ░▒▓░░ ▒░▒░▒░ ░ ▒░▓  ░░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░ ▒ ░░▒░▒░░ ▒░ ░░ ▒░▓  ░░ ▒░▓  ░
-    ░      ░▒ ░ ▒░  ░ ▒ ▒░ ░ ░ ▒  ░  ░ ▒ ▒░ ░ ░▒  ░ ░ ▒ ░▒░ ░ ░ ░  ░░ ░ ▒  ░░ ░ ▒  ░
-  ░        ░░   ░ ░ ░ ░ ▒    ░ ░   ░ ░ ░ ▒  ░  ░  ░   ░  ░░ ░   ░     ░ ░     ░ ░   
-            ░         ░ ░      ░  ░    ░ ░        ░   ░  ░  ░   ░  ░    ░  ░    ░  ░
-        '''.replace("█", f"{Fore.LIGHTWHITE_EX}█{Fore.LIGHTBLUE_EX}")
+        f'''
+ ███████████ ███████████      ███████    █████          ███████   
+░█░░░███░░░█░░███░░░░░███   ███░░░░░███ ░░███         ███░░░░░███ 
+░   ░███  ░  ░███    ░███  ███     ░░███ ░███        ███     ░░███
+    ░███     ░██████████  ░███      ░███ ░███       ░███      ░███
+    ░███     ░███░░░░░███ ░███      ░███ ░███       ░███      ░███
+    ░███     ░███    ░███ ░░███     ███  ░███      █░░███     ███ 
+    █████    █████   █████ ░░░███████░   ███████████ ░░░███████░  
+   ░░░░░    ░░░░░   ░░░░░    ░░░░░░░    ░░░░░░░░░░░    ░░░░░░░                                                                                                                        
+        '''.replace("█", f"{Fore.LIGHTWHITE_EX}█{Fore.LIGHTBLACK_EX}")
+        
      )
-HELP_MENU = f"""
-{Fore.LIGHTWHITE_EX}====={Fore.LIGHTBLUE_EX} Commands{Fore.LIGHTWHITE_EX} =====
-msgbox      {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Show a fake alert message
-open_cd     {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Open and close CD tray
-beep        {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Play random beep sounds
-screenshot  {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Start a screenshot
-mouse       {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Crazy Mouse
-screen      {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Turn off the screen and then turn it back on
-flash       {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Flash Screen
-webcam      {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Say hello to the camera
-robot       {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Talking robot
-notepad     {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Menacing Notepad
-led         {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Makes the keyboard flash
-sos         {Fore.BLUE}-{Fore.LIGHTWHITE_EX} SOS keyboard
 
-{Fore.LIGHTWHITE_EX}====={Fore.LIGHTBLUE_EX} Other{Fore.LIGHTWHITE_EX} =====
-help        {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Show this menu
-quit        {Fore.BLUE}-{Fore.LIGHTWHITE_EX} Close connection
+HELP_MENU = f"""
+{Fore.LIGHTGREEN_EX}Commands{Fore.LIGHTWHITE_EX}
+========
+  msgbox        <MESSAGE>      Show a fake alert message
+  beep          <NUMBER>       Play random beep sounds
+  mouse         <NUMBER>       Move mouse randomly
+  screenlock    <NUMBER>       Lock screen
+  led           <NUMBER>       Flash the keyboard LEDs on and off
+  errorsound    <NUMBER>       Trigger Windows error noise
+  shakymouse    <NUMBER>       Shake the mouse
+  background    <NUMBER>       Flash the screen by changing wallpaper rapidly
+  flash         <NUMBER>       Turn off the screen and turn it back on
+  opencd                       Open and close the CD/DVD tray
+  notification  <MESSAGE>      Put a notification
+  webcam        <NUMBER>       Turn on the webcam light
+  robot                        Make the computer speak
+  notepad       <MESSAGE>      Launch the NOTEPAD application and post a message
+  theme         <light/dark>   Change color
+  shake         <NUMBER>       Shake the open windows
+  flip          <NUMBER>       Screen that flips every second
+
+{Fore.LIGHTGREEN_EX}Other{Fore.LIGHTWHITE_EX}
+=====
+  help                         Show this menu
+  quit                         Close connection
 """
 
 while True:
-    print(f'{Fore.LIGHTBLUE_EX}[*]{Fore.LIGHTWHITE_EX} Listening on {Fore.BLUE}{SERVER}:{PORT}')
-
+    print(f'{Fore.LIGHTBLACK_EX}[*]{Fore.LIGHTWHITE_EX} Listening on {SERVER}:{PORT}')
     client, addr = s.accept()
-    print(f'{Fore.BLUE}[+]{Fore.LIGHTWHITE_EX} Client connected: {Fore.LIGHTCYAN_EX}{addr}')
+    print(f'{Fore.LIGHTWHITE_EX}[+] Client connected: {Fore.LIGHTCYAN_EX}{addr}')
     client.send('Connected to server'.encode())
-    time.sleep(3)
     title()
-
     while True:
-        cmd = input(f'{Fore.LIGHTWHITE_EX}root~/{Fore.LIGHTBLUE_EX}{SERVER}{Fore.LIGHTWHITE_EX}# ').strip()
+        cmd = input(f'{Fore.LIGHTWHITE_EX}remote{Fore.LIGHTBLACK_EX}>{Fore.WHITE} ').strip()
         if not cmd:
             continue
-
         if cmd.lower() == "help":
             print(HELP_MENU)
             continue
-
         client.send(cmd.encode())
-
         if cmd.lower() in ['q', 'quit', 'exit']:
             break
-
         data_size = struct.unpack(">I", client.recv(4))[0]
         result = b""
         while len(result) < data_size:
             result += client.recv(1024)
-
-        if cmd == "screenshot":
-            with open("screenshot.png", "wb") as f:
-                f.write(result)
-        else:
-            print(result.decode(errors="ignore"))
-
     client.close()
-
     if input('Wait for new client? (y/n) ') in ['n', 'no']:
         break
-
 s.close()
